@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 <head>
+    <style>
+        button{
+            height: 70px;
+            width: 70px;
+            background-color: lightgreen;
+        }
+        tr{
+            background-color: rgb(241, 238, 207);
+            height: 60px;
+            width: 60px;
+        }
+        th{
+            background-color: rgb(183, 240, 176);
+            height: 60px;
+            width: 60px;
+        }
+        td{
+            text-align: center;
+            transition: 300ms;
+        }
+
+        td:hover{
+            background-color: khaki;
+        }
+    </style>
     <script>    
 
         var dateObj = new Date();
@@ -8,11 +33,56 @@
         function monthup(){
             dateObj.setMonth(++month);
             data();
+            document.getElementById("ButtonUp").innerHTML = nameMonth(month);
         }
 
         function monthdown(){
             dateObj.setMonth(--month);
             data();
+            document.getElementById("ButtonDown").innerHTML = nameMonth(month);
+        }
+
+        function nameMonth(month){
+            var data;
+            switch (month){
+                case 1:
+                    data="Styczeń";
+                    break;
+                case 2:
+                    data="Luty";
+                    break;     
+                case 3:
+                    data="Marzec";
+                    break;
+                case 4:
+                    data="Kwiecień";
+                    break;
+                case 5:
+                    data="Maj";
+                    break;
+                case 6:
+                    data="Czerwiec";
+                    break;     
+                case 7:
+                    data="Lipiec";
+                    break;
+                case 8:
+                    data="Sierpień";
+                    break;
+                case 9:
+                    data="Wrzesień";
+                    break;
+                case 10:
+                    data="Październik";
+                    break;     
+                case 11:
+                    data="Listopad";
+                    break;
+                case 12:
+                    data="Grudzień";
+                    break;
+            }
+            return data;
         }
 
         function data(){
@@ -40,7 +110,7 @@
     <div id="numdays"></div><br>
     <div id="firstday"></div><br>
     <div id="dayofmonth"></div><br>
-    <button onclick="monthdown();">Miesiąc -</button><button onclick="monthup();">Miesiąc +</button>
+    <button id="ButtonDown" onclick="monthdown();">Miesiąc -</button><button id="ButtonUp" onclick="monthup();">Miesiąc +</button>
     <table>
         <tr>
             <th>Pon</th>

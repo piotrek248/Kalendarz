@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        #oNas{
+            height: 80px;
+            width: 80px;
+            text-align: center;
+            margin-top: 20px;
+            margin-right: 50px;
+            background-color: aqua;
+            box-shadow: 10px 10px 5px gray;
+            transition: 150ms;
+            float: left;
+        }
+        #oNas:hover{
+            height: 100px;
+            width: 100px;
+            background-color: indianred;
+        }
+
+        .button{
+            background-color: #FF97FF;
+            border: none;
+            height: 40px;
+            width: 80px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function move(){
+            var object = document.getElementById("oNas");
+            object.textContent = 'kontakt';
+        }
+        function yellow(){
+            var object = document.getElementById("oNas");
+            object.style.height = "180px";
+            object.style.width = "180px";
+        }
+    </script>
+</head>
+<body>
+    <div id="oNas">O nas</div>
+    <button class="button">Button</button>
+</body>
